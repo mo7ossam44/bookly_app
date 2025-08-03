@@ -1,3 +1,4 @@
+import 'package:bookly/constants.dart';
 import 'package:get/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:bookly/core/utils/assets.dart';
@@ -59,7 +60,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
   void naviagtionAnimation() {
     Future.delayed(const Duration(seconds: 2), () {
-      Get.to(() => HomeView(), transition: Transition.fadeIn);
+      Get.to(() => HomeView(), transition: Transition.fadeIn , duration: kTransitionDuration);
     });
   }
 }
