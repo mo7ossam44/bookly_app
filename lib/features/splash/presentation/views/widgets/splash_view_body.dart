@@ -1,5 +1,6 @@
 import 'package:bookly/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:bookly/core/utils/assets.dart';
 
 class SplashViewBody extends StatelessWidget {
   const SplashViewBody({super.key});
@@ -9,7 +10,7 @@ class SplashViewBody extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Center(child: Image.asset(kLogoImage, width: 250)),
+        Center(child: Image.asset(AssetsData.logo, width: 250)),
         SizedBox(height: 10),
         Text(
           kSplashText,
