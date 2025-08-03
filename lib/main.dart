@@ -9,9 +9,6 @@ class BooklyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold()
-    );
+    return MaterialApp(debugShowCheckedModeBanner: false, home: Scaffold());
   }
 }
-
