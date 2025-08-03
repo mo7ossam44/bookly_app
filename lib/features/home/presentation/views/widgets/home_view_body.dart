@@ -14,12 +14,12 @@ class HomeViewBody extends StatelessWidget {
       child: CustomScrollView(
         slivers: [
           CustomAppBar(),
-          SliverHight(hight: 30,),
+          SliverHight(hight: 20),
           ListViewBuilderHorizontaly(),
+          SliverHight(hight: 5),
           SliverListBuilder(),
         ],
       ),
     );
   }
 }
-
