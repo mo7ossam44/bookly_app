@@ -16,16 +16,19 @@ class CustomSliverListItem extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Image.asset(AssetsData.bookPhoto),
+          SizedBox(width: 30),
           Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                '''Harry Potter and the Globlet 
-                         of Fire''',
-                style: Styles.textStyle20.copyWith(fontFamily: kPrimaryFont),
-                maxLines: 1,
-                overflow: TextOverflow.fade,
+              SizedBox(
+                width: MediaQuery.of(context).size.width * 0.5,
+                child: Text(
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  'Harry Potter and the Globlet of Fire',
+                  style: Styles.textStyle20.copyWith(fontFamily: kPrimaryFont),
+                ),
               ),
               Text('J.K. Rowling', style: Styles.textStyle20),
               Row(

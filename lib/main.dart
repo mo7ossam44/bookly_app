@@ -1,5 +1,6 @@
 import 'package:bookly/constants.dart';
 import 'package:bookly/features/home/presentation/views/book_detailes_view.dart';
+import 'package:bookly/features/splash/presentation/views/splash_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 
@@ -19,7 +20,7 @@ class BooklyApp extends StatelessWidget {
         brightness: Brightness.dark,
         fontFamily: kPrimaryFont,
       ),
-      home: BookDetailesView(),
+      home: SplashView(),
     );
   }
 }
