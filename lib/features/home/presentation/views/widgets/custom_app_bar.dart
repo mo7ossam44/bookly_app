@@ -7,19 +7,22 @@ class CustomAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Image.asset(AssetsData.logo, height: 20),
-          IconButton(
-            onPressed: () {},
-            icon: Image.asset(
-              AssetsData.search,
-              width: 20,
-              color: Colors.white,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Image.asset(AssetsData.logo, height: 20),
+            IconButton(
+              onPressed: () {},
+              icon: Image.asset(
+                AssetsData.search,
+                width: 20,
+                color: Colors.white,
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

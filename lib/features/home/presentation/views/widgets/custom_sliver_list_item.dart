@@ -10,7 +10,7 @@ class CustomSliverListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 15),
+      margin: EdgeInsets.symmetric(vertical: 10),
       width: MediaQuery.of(context).size.width,
       height: 160,
       child: Row(

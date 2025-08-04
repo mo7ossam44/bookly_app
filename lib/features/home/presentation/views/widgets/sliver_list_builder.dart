@@ -6,10 +6,12 @@ class SliverListBuilder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SliverList.builder(
-      itemCount: 10,
-      itemBuilder: (context, index) => CustomSliverListItem(),
+    return SliverPadding(
+      padding: EdgeInsetsGeometry.symmetric(horizontal: 20),
+      sliver: SliverList.builder(
+        itemCount: 10,
+        itemBuilder: (context, index) => CustomSliverListItem(),
+      ),
     );
   }
 }
-
