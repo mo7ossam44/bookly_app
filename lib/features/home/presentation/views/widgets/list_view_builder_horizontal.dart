@@ -13,7 +13,7 @@ class ListViewBuilderHorizontaly extends StatelessWidget {
           physics: BouncingScrollPhysics(),
           scrollDirection: Axis.horizontal,
           itemCount: 10,
-          itemBuilder: (context, index) => CustomListViewItem(),
+          itemBuilder: (context, index) => const CustomListViewItem(),
         ),
       ),
     );

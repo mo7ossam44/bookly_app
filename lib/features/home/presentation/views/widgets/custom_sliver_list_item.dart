@@ -1,4 +1,5 @@
 import 'package:bookly/constants.dart';
+import 'package:bookly/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:bookly/core/utils/assets.dart';
 
@@ -22,24 +23,14 @@ class CustomSliverListItem extends StatelessWidget {
               Text(
                 '''Harry Potter and the Globlet 
                          of Fire''',
-                style: TextStyle(fontSize: 20),
+                style: Styles.textStyle20.copyWith(fontFamily: kPrimaryFont),
                 maxLines: 1,
                 overflow: TextOverflow.fade,
               ),
-              Text(
-                'J.K. Rowling',
-                style: TextStyle(fontSize: 20, fontFamily: kSecandryFont),
-              ),
+              Text('J.K. Rowling', style: Styles.textStyle20),
               Row(
                 children: [
-                  Text(
-                    '19.99 L.E',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontFamily: kSecandryFont,
-                      fontSize: 20,
-                    ),
-                  ),
+                  Text('19.99 L.E', style: Styles.textStyle20),
                   SizedBox(width: 30),
                   Row(
                     children: [
@@ -47,14 +38,7 @@ class CustomSliverListItem extends StatelessWidget {
                         padding: const EdgeInsets.only(bottom: 10),
                         child: Icon(Icons.star, color: Colors.yellow),
                       ),
-                      Text(
-                        ' 4.8(2390)',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontFamily: kSecandryFont,
-                          fontSize: 20,
-                        ),
-                      ),
+                      Text(' 4.8(2390)', style: Styles.textStyle20),
                     ],
                   ),
                 ],

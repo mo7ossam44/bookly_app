@@ -1,5 +1,5 @@
-import 'package:bookly/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:bookly/core/utils/styles.dart';
 import 'package:bookly/features/home/presentation/views/widgets/sliver_hight.dart';
 import 'package:bookly/features/home/presentation/views/widgets/custom_app_bar.dart';
 import 'package:bookly/features/home/presentation/views/widgets/sliver_list_builder.dart';
@@ -20,14 +20,7 @@ class HomeViewBody extends StatelessWidget {
           ListViewBuilderHorizontaly(),
           SliverHight(hight: 40),
           SliverToBoxAdapter(
-            child: Text(
-              'Best Seller',
-              style: TextStyle(
-                fontSize: 25,
-                fontFamily: kSecandryFont,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
+            child: Text('Best Seller', style: Styles.textStyle25),
           ),
           SliverHight(hight: 5),
           SliverListBuilder(),
