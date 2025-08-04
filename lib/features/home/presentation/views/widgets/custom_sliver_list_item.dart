@@ -1,5 +1,6 @@
 import 'package:bookly/constants.dart';
 import 'package:bookly/core/utils/styles.dart';
+import 'package:bookly/features/home/presentation/views/widgets/book_rating_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:bookly/core/utils/assets.dart';
 
@@ -13,40 +14,34 @@ class CustomSliverListItem extends StatelessWidget {
       width: MediaQuery.of(context).size.width,
       height: 160,
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Image.asset(AssetsData.bookPhoto),
           SizedBox(width: 30),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(
-                width: MediaQuery.of(context).size.width * 0.5,
-                child: Text(
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                  'Harry Potter and the Globlet of Fire',
-                  style: Styles.textStyle20.copyWith(fontFamily: kPrimaryFont),
-                ),
-              ),
-              Text('J.K. Rowling', style: Styles.textStyle20),
-              Row(
-                children: [
-                  Text('19.99 L.E', style: Styles.textStyle20),
-                  SizedBox(width: 30),
-                  Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: 10),
-                        child: Icon(Icons.star, color: Colors.yellow),
-                      ),
-                      Text(' 4.8(2390)', style: Styles.textStyle20),
-                    ],
+          Expanded(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.5,
+                  child: Text(
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    'Harry Potter and the Globlet of Fire',
+                    style: Styles.textStyle20.copyWith(
+                      fontFamily: kPrimaryFont,
+                    ),
                   ),
-                ],
-              ),
-            ],
+                ),
+                Text(
+                  'J.K. Rowling',
+                  style: Styles.textStyle20.copyWith(
+                    color: Colors.grey.shade500,
+                  ),
+                ),
+                BookRating(),
+              ],
+            ),
           ),
         ],
       ),
