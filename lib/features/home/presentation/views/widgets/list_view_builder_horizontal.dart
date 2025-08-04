@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:bookly/features/home/presentation/views/widgets/custom_list_view_item.dart';
 
 class ListViewBuilderHorizontaly extends StatelessWidget {
-  const ListViewBuilderHorizontaly({super.key});
+  const ListViewBuilderHorizontaly({super.key, required this.h});
+  final double h;
 
   @override
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
       child: SizedBox(
-        height: 280,
+        height: h,
         child: ListView.builder(
           physics: BouncingScrollPhysics(),
           scrollDirection: Axis.horizontal,

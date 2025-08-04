@@ -17,7 +17,7 @@ class HomeViewBody extends StatelessWidget {
         slivers: [
           CustomAppBar(),
           SliverHight(hight: 20),
-          ListViewBuilderHorizontaly(),
+          ListViewBuilderHorizontaly(h: 280),
           SliverHight(hight: 40),
           SliverToBoxAdapter(
             child: Text('Best Seller', style: Styles.textStyle25),
