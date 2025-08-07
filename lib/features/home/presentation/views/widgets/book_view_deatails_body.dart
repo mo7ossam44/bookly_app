@@ -2,9 +2,10 @@ import 'package:bookly/constants.dart';
 import 'package:bookly/core/utils/assets.dart';
 import 'package:bookly/core/utils/styles.dart';
 import 'package:bookly/features/home/presentation/views/widgets/book_rating_widget.dart';
+import 'package:bookly/features/home/presentation/views/widgets/books_action.dart';
 import 'package:bookly/features/home/presentation/views/widgets/custom_book_view_app_bar.dart';
 import 'package:bookly/features/home/presentation/views/widgets/list_view_builder_horizontal.dart';
-import 'package:bookly/features/home/presentation/views/widgets/sliver_hight.dart';
+import 'package:bookly/core/utils/widgets/sliver_hight.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailesViewBody extends StatelessWidget {
@@ -18,7 +19,7 @@ class BookDetailesViewBody extends StatelessWidget {
       child: CustomScrollView(
         slivers: [
           CustomBookViewAppBar(),
-          SliverHight(hight: 20),
+          const SliverHight(hight: 20),
           SliverToBoxAdapter(
             child: Container(
               height: height * 0.32,
@@ -27,7 +28,7 @@ class BookDetailesViewBody extends StatelessWidget {
               ),
             ),
           ),
-          SliverHight(hight: 30),
+          const SliverHight(hight: 30),
           SliverToBoxAdapter(
             child: Text(
               'The Jungle Book',
@@ -38,7 +39,7 @@ class BookDetailesViewBody extends StatelessWidget {
               ),
             ),
           ),
-          SliverHight(hight: 5),
+          const SliverHight(hight: 5),
           SliverToBoxAdapter(
             child: Text(
               'Rudyard Kipling',
@@ -49,50 +50,11 @@ class BookDetailesViewBody extends StatelessWidget {
               ),
             ),
           ),
-          SliverHight(hight: 15),
+          const SliverHight(hight: 15),
           SliverToBoxAdapter(child: BookRating()),
           SliverHight(hight: 20),
-          SliverToBoxAdapter(
-            child: Container(
-              margin: EdgeInsets.symmetric(horizontal: 30),
-              decoration: BoxDecoration(),
-              height: 60,
-              child: Row(
-                children: [
-                  Container(
-                    height: 60,
-                    width: 150,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(20),
-                        bottomLeft: Radius.circular(20),
-                      ),
-                    ),
-                    alignment: Alignment.center,
-                    child: Text(
-                      '19.99 L.E',
-                      style: Styles.textStyle25.copyWith(color: Colors.black),
-                    ),
-                  ),
-                  Container(
-                    height: 60,
-                    width: 150,
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 255, 135, 55),
-                      borderRadius: BorderRadius.only(
-                        topRight: Radius.circular(20),
-                        bottomRight: Radius.circular(20),
-                      ),
-                    ),
-                    alignment: Alignment.center,
-                    child: Text('Free preview', style: Styles.textStyle20),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          SliverHight(hight: 25),
+          const BooksAction(),
+          const SliverHight(hight: 25),
           SliverToBoxAdapter(
             child: Text(
               'You can also like',
@@ -103,7 +65,7 @@ class BookDetailesViewBody extends StatelessWidget {
               ),
             ),
           ),
-          SliverHight(hight: 15),
+          const SliverHight(hight: 15),
           ListViewBuilderHorizontaly(h: 150),
           SliverHight(hight: 100),
         ],
