@@ -18,56 +18,57 @@ class BookDetailesViewBody extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
       child: CustomScrollView(
         slivers: [
-          CustomBookViewAppBar(),
-          const SliverHight(hight: 20),
-          SliverToBoxAdapter(
-            child: Container(
-              height: height * 0.32,
-              decoration: BoxDecoration(
-                image: DecorationImage(image: AssetImage(AssetsData.bookPhoto)),
-              ),
+          SliverFillRemaining(
+            hasScrollBody: false,
+            child: Column(
+              children: [
+                CustomBookViewAppBar(),
+                const SizedBox(height: 20),
+                Container(
+                  height: height * 0.32,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage(AssetsData.bookPhoto),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 20),
+                Text(
+                  'The Jungle Book',
+                  textAlign: TextAlign.center,
+                  style: Styles.textStyle30.copyWith(
+                    fontFamily: kPrimaryFont,
+                    wordSpacing: 3,
+                  ),
+                ),
+                const SizedBox(height: 20),
+                Text(
+                  'Rudyard Kipling',
+                  textAlign: TextAlign.center,
+                  style: Styles.textStyle20.copyWith(
+                    color: Colors.grey.shade500,
+                    letterSpacing: 3,
+                  ),
+                ),
+                const SizedBox(height: 20),
+                const BookRating(),
+                const SizedBox(height: 20),
+                const BooksAction(),
+                Expanded(child: const SizedBox(height: 25)),
+                Text(
+                  'You can also like',
+                  textAlign: TextAlign.start,
+                  style: Styles.textStyle20.copyWith(
+                    letterSpacing: 1,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                const SizedBox(height: 20),
+                SimilarBooksListViewHorizontaly(),
+                const SizedBox(height: 100),
+              ],
             ),
           ),
-          const SliverHight(hight: 30),
-          SliverToBoxAdapter(
-            child: Text(
-              'The Jungle Book',
-              textAlign: TextAlign.center,
-              style: Styles.textStyle30.copyWith(
-                fontFamily: kPrimaryFont,
-                wordSpacing: 3,
-              ),
-            ),
-          ),
-          const SliverHight(hight: 5),
-          SliverToBoxAdapter(
-            child: Text(
-              'Rudyard Kipling',
-              textAlign: TextAlign.center,
-              style: Styles.textStyle20.copyWith(
-                color: Colors.grey.shade500,
-                letterSpacing: 3,
-              ),
-            ),
-          ),
-          const SliverHight(hight: 15),
-          SliverToBoxAdapter(child: BookRating()),
-          const SliverHight(hight: 20),
-          const BooksAction(),
-          const SliverHight(hight: 25),
-          SliverToBoxAdapter(
-            child: Text(
-              'You can also like',
-              textAlign: TextAlign.start,
-              style: Styles.textStyle20.copyWith(
-                letterSpacing: 1,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-          ),
-          const SliverHight(hight: 15),
-          SimilarBooksListViewHorizontaly(),
-          const SliverHight(hight: 100),
         ],
       ),
     );

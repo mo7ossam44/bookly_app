@@ -7,15 +7,13 @@ class SimilarBooksListViewHorizontaly extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
-    return SliverToBoxAdapter(
-      child: SizedBox(
-        height: height * 0.2,
-        child: ListView.builder(
-          physics: BouncingScrollPhysics(),
-          scrollDirection: Axis.horizontal,
-          itemCount: 10,
-          itemBuilder: (context, index) => const CustomListViewItem(),
-        ),
+    return SizedBox(
+      height: height * 0.2,
+      child: ListView.builder(
+        physics: BouncingScrollPhysics(),
+        scrollDirection: Axis.horizontal,
+        itemCount: 10,
+        itemBuilder: (context, index) => const CustomListViewItem(),
       ),
     );
   }

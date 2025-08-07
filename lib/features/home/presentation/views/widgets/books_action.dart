@@ -6,36 +6,34 @@ class BooksAction extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SliverToBoxAdapter(
-      child: Row(
-        children: [
-          Expanded(
-            child: CustomButton(
-              text: '19.99E',
-              radiusBL: 20,
-              radiusTL: 20,
-              radiusBR: 0,
-              radiusTR: 0,
-              bgColor: Colors.white,
-              textColor: Colors.black,
-              onPressed: () {},
-            ),
+    return Row(
+      children: [
+        Expanded(
+          child: CustomButton(
+            text: '19.99E',
+            radiusBL: 20,
+            radiusTL: 20,
+            radiusBR: 0,
+            radiusTR: 0,
+            bgColor: Colors.white,
+            textColor: Colors.black,
+            onPressed: () {},
           ),
-          Expanded(
-            child: CustomButton(
-              text: 'Free Perview',
-              radiusBL: 0,
-              radiusTL: 0,
-              radiusBR: 20,
-              radiusTR: 20,
-              bgColor: Color(0xffEF8262),
-              textColor: Colors.white,
-              onPressed: () {},
-              fontSize: 20,
-            ),
+        ),
+        Expanded(
+          child: CustomButton(
+            text: 'Free Perview',
+            radiusBL: 0,
+            radiusTL: 0,
+            radiusBR: 20,
+            radiusTR: 20,
+            bgColor: Color(0xffEF8262),
+            textColor: Colors.white,
+            onPressed: () {},
+            fontSize: 20,
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
