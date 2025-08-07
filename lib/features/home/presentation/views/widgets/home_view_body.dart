@@ -15,7 +15,7 @@ class HomeViewBody extends StatelessWidget {
       slivers: [
         CustomAppBar(),
         SliverHight(hight: 20),
-        ListViewBuilderHorizontaly(h: 280),
+        ListViewBuilderHorizontaly(),
         SliverHight(hight: 40),
         SliverToBoxAdapter(
           child: Padding(

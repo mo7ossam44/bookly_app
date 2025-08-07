@@ -1,12 +1,12 @@
 import 'package:bookly/constants.dart';
+import 'package:flutter/material.dart';
 import 'package:bookly/core/utils/assets.dart';
 import 'package:bookly/core/utils/styles.dart';
-import 'package:bookly/features/home/presentation/views/widgets/book_rating_widget.dart';
-import 'package:bookly/features/home/presentation/views/widgets/books_action.dart';
-import 'package:bookly/features/home/presentation/views/widgets/custom_book_view_app_bar.dart';
-import 'package:bookly/features/home/presentation/views/widgets/list_view_builder_horizontal.dart';
 import 'package:bookly/core/utils/widgets/sliver_hight.dart';
-import 'package:flutter/material.dart';
+import 'package:bookly/features/home/presentation/views/widgets/books_action.dart';
+import 'package:bookly/features/home/presentation/views/widgets/book_rating_widget.dart';
+import 'package:bookly/features/home/presentation/views/widgets/similar_books_list_view.dart';
+import 'package:bookly/features/home/presentation/views/widgets/custom_book_view_app_bar.dart';
 
 class BookDetailesViewBody extends StatelessWidget {
   const BookDetailesViewBody({super.key});
@@ -52,7 +52,7 @@ class BookDetailesViewBody extends StatelessWidget {
           ),
           const SliverHight(hight: 15),
           SliverToBoxAdapter(child: BookRating()),
-          SliverHight(hight: 20),
+          const SliverHight(hight: 20),
           const BooksAction(),
           const SliverHight(hight: 25),
           SliverToBoxAdapter(
@@ -66,8 +66,8 @@ class BookDetailesViewBody extends StatelessWidget {
             ),
           ),
           const SliverHight(hight: 15),
-          ListViewBuilderHorizontaly(h: 150),
-          SliverHight(hight: 100),
+          SimilarBooksListViewHorizontaly(),
+          const SliverHight(hight: 100),
         ],
       ),
     );
