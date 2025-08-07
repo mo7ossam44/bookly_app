@@ -11,6 +11,7 @@ class BookDetailesViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var height = MediaQuery.of(context).size.height;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
       child: CustomScrollView(
@@ -19,7 +20,7 @@ class BookDetailesViewBody extends StatelessWidget {
           SliverHight(hight: 20),
           SliverToBoxAdapter(
             child: Container(
-              height: MediaQuery.of(context).size.height * 0.32,
+              height: height * 0.32,
               decoration: BoxDecoration(
                 image: DecorationImage(image: AssetImage(AssetsData.bookPhoto)),
               ),
