@@ -43,7 +43,13 @@ class CustomSliverListItem extends StatelessWidget {
                       color: Colors.grey.shade500,
                     ),
                   ),
-                  BookRating(),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text('19.99 L.E', style: Styles.textStyle20),
+                      BookRating(),
+                    ],
+                  ),
                 ],
               ),
             ),

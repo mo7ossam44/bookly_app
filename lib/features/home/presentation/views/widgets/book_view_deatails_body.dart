@@ -1,6 +1,7 @@
 import 'package:bookly/constants.dart';
 import 'package:bookly/core/utils/assets.dart';
 import 'package:bookly/core/utils/styles.dart';
+import 'package:bookly/features/home/presentation/views/widgets/book_rating_widget.dart';
 import 'package:bookly/features/home/presentation/views/widgets/custom_book_view_app_bar.dart';
 import 'package:bookly/features/home/presentation/views/widgets/list_view_builder_horizontal.dart';
 import 'package:bookly/features/home/presentation/views/widgets/sliver_hight.dart';
@@ -49,21 +50,7 @@ class BookDetailesViewBody extends StatelessWidget {
             ),
           ),
           SliverHight(hight: 15),
-          SliverToBoxAdapter(
-            child: Padding(
-              padding: EdgeInsetsGeometry.only(right: 20),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 10),
-                    child: Icon(Icons.star, color: Colors.yellow),
-                  ),
-                  Text(' 4.8(2390)', style: Styles.textStyle20),
-                ],
-              ),
-            ),
-          ),
+          SliverToBoxAdapter(child: BookRating()),
           SliverHight(hight: 20),
           SliverToBoxAdapter(
             child: Container(
