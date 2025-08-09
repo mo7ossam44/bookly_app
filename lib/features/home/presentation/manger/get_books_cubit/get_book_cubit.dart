@@ -8,13 +8,14 @@ class GetBookCubit extends Cubit<GetBookState> {
 
   List<BookModel>? booksListCubit;
 
-  Future getAllBooksCubit() async {
+  Future<List<BookModel>> getAllBooksCubit() async {
     try {
       emit(GetBookStateLoading());
       booksListCubit = await BooksService().getBooks();
       emit(GetBookStateSucess());
     } catch (e) {
-      emit(GetBookStateFaliure());
+      emit(GetBookStateFaliure(e.toString()));
     }
+    return booksListCubit!;
   }
 }
