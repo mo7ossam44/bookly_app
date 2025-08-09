@@ -20,7 +20,7 @@ class CustomSliverListItem extends StatelessWidget {
         child: Row(
           children: [
             Image.asset(AssetsData.bookPhoto),
-            SizedBox(width: 30),
+            const SizedBox(width: 30),
             Expanded(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -43,7 +43,7 @@ class CustomSliverListItem extends StatelessWidget {
                       color: Colors.grey.shade500,
                     ),
                   ),
-                  Row(
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text('19.99 L.E', style: Styles.textStyle20),

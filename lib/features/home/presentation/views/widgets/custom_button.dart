@@ -42,11 +42,16 @@ class CustomButton extends StatelessWidget {
             ),
           ),
         ),
-        child: Text(
-          text,
-          style: Styles.textStyle25.copyWith(
-            color: textColor,
-            fontSize: fontSize,
+        child: Padding(
+          padding: text == 'Free Perview'
+              ? EdgeInsets.only(top: 5)
+              : EdgeInsets.only(top: 0),
+          child: Text(
+            text,
+            style: Styles.textStyle25.copyWith(
+              color: textColor,
+              fontSize: fontSize,
+            ),
           ),
         ),
       ),
