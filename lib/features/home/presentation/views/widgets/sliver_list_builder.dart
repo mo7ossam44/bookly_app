@@ -5,14 +5,14 @@ import 'package:bookly/features/home/presentation/manger/get_books_cubit/get_boo
 import 'package:bookly/features/home/presentation/manger/get_books_cubit/get_book_state.dart';
 import 'package:bookly/features/home/presentation/views/widgets/custom_list_view_verticaly_item.dart';
 
-class SliverListBuilder extends StatefulWidget {
-  const SliverListBuilder({super.key});
+class ListViewBuilder extends StatefulWidget {
+  const ListViewBuilder({super.key});
 
   @override
-  State<SliverListBuilder> createState() => _SliverListBuilderState();
+  State<ListViewBuilder> createState() => _ListViewBuilderState();
 }
 
-class _SliverListBuilderState extends State<SliverListBuilder> {
+class _ListViewBuilderState extends State<ListViewBuilder> {
   @override
   void initState() {
     super.initState();
@@ -28,15 +28,14 @@ class _SliverListBuilderState extends State<SliverListBuilder> {
         } else if (state is GetBookStateSucess) {
           List<BookModel> booksList =
               BlocProvider.of<GetBookCubit>(context).booksListCubit ?? [];
-          return Expanded(
-            child: Padding(
-              padding: EdgeInsetsGeometry.symmetric(horizontal: 20),
-              child: ListView.builder(
-                physics: const NeverScrollableScrollPhysics(),
-                itemCount: booksList.length,
-                itemBuilder: (context, index) =>
-                    CustomListViewItemVerticaly(bookModel: booksList[index]),
-              ),
+          return Padding(
+            padding: EdgeInsetsGeometry.symmetric(horizontal: 20),
+            child: ListView.builder(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              itemCount: booksList.length,
+              itemBuilder: (context, index) =>
+                  CustomListViewItemVerticaly(bookModel: booksList[index]),
             ),
           );
         } else if (state is GetBookStateFaliure) {

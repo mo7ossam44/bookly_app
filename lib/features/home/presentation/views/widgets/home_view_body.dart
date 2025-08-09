@@ -17,8 +17,7 @@ class HomeViewBody extends StatelessWidget {
       child: CustomScrollView(
         physics: BouncingScrollPhysics(),
         slivers: [
-          SliverFillRemaining(
-            hasScrollBody: true,
+          SliverToBoxAdapter(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -33,7 +32,7 @@ class HomeViewBody extends StatelessWidget {
                   ),
                   child: Text('Best Seller', style: Styles.textStyle25),
                 ),
-                SliverListBuilder(),
+                ListViewBuilder(),
               ],
             ),
           ),
