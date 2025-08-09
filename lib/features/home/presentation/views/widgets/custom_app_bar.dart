@@ -12,25 +12,23 @@ class CustomAppBar extends StatefulWidget {
 class _CustomAppBarState extends State<CustomAppBar> {
   @override
   Widget build(BuildContext context) {
-    return SliverToBoxAdapter(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Image.asset(AssetsData.logo, height: 20),
-            IconButton(
-              onPressed: () {
-                showSearch(context: context, delegate: CustomSearch());
-              },
-              icon: Image.asset(
-                AssetsData.search,
-                width: 20,
-                color: Colors.white,
-              ),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Image.asset(AssetsData.logo, height: 20),
+          IconButton(
+            onPressed: () {
+              showSearch(context: context, delegate: CustomSearch());
+            },
+            icon: Image.asset(
+              AssetsData.search,
+              width: 20,
+              color: Colors.white,
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

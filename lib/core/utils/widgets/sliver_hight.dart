@@ -10,6 +10,6 @@ class SliverHight extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SliverToBoxAdapter(child: SizedBox(height: hight));
+    return SizedBox(height: hight);
   }
 }

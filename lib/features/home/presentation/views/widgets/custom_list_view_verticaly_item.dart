@@ -1,13 +1,15 @@
 import 'package:bookly/constants.dart';
-import 'package:bookly/core/utils/app_router.dart';
-import 'package:bookly/core/utils/styles.dart';
-import 'package:bookly/features/home/presentation/views/widgets/book_rating_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:bookly/core/utils/assets.dart';
 import 'package:go_router/go_router.dart';
+import 'package:bookly/core/utils/styles.dart';
+import 'package:bookly/core/utils/app_router.dart';
+import 'package:bookly/features/home/data/models/book_model.dart';
+import 'package:bookly/features/home/presentation/views/widgets/book_rating_widget.dart';
 
-class CustomSliverListItem extends StatelessWidget {
-  const CustomSliverListItem({super.key});
+class CustomListViewItemVerticaly extends StatelessWidget {
+  const CustomListViewItemVerticaly({super.key, this.bookModel});
+
+  final BookModel? bookModel;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +21,7 @@ class CustomSliverListItem extends StatelessWidget {
         height: 160,
         child: Row(
           children: [
-            Image.asset(AssetsData.bookPhoto),
+            Image.network(bookModel!.bookImage),
             const SizedBox(width: 30),
             Expanded(
               child: Column(
@@ -31,22 +33,22 @@ class CustomSliverListItem extends StatelessWidget {
                     child: Text(
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
-                      'Harry Potter and the Globlet of Fire',
+                      bookModel!.title,
                       style: Styles.textStyle20.copyWith(
                         fontFamily: kPrimaryFont,
                       ),
                     ),
                   ),
                   Text(
-                    'J.K. Rowling',
+                    bookModel!.author,
                     style: Styles.textStyle20.copyWith(
                       color: Colors.grey.shade500,
                     ),
                   ),
-                  const Row(
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text('19.99 L.E', style: Styles.textStyle20),
+                      Text(bookModel!.price, style: Styles.textStyle20),
                       BookRating(),
                     ],
                   ),

@@ -1,8 +1,10 @@
-import 'package:bookly/core/utils/assets.dart';
 import 'package:flutter/material.dart';
+import 'package:bookly/features/home/data/models/book_model.dart';
 
 class CustomListViewItem extends StatelessWidget {
-  const CustomListViewItem({super.key});
+  const CustomListViewItem({super.key, this.bookModel});
+
+  final BookModel? bookModel;
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +13,19 @@ class CustomListViewItem extends StatelessWidget {
       child: Container(
         margin: EdgeInsets.only(right: 15),
         decoration: BoxDecoration(
-          image: const DecorationImage(image: AssetImage(AssetsData.bookPhoto)),
+          borderRadius: BorderRadius.circular(30),
+          boxShadow: [
+            BoxShadow(
+              color: const Color.fromARGB(255, 255, 212, 160),
+              spreadRadius: 0.1,
+              blurRadius: 5,
+              offset: Offset(1, 1),
+            ),
+          ],
+          image: DecorationImage(
+            fit: BoxFit.cover,
+            image: NetworkImage(bookModel!.bookImage),
+          ),
         ),
       ),
     );
