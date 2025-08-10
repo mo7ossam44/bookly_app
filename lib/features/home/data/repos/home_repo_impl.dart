@@ -11,11 +11,11 @@ class HomeRepoImpl implements HomeRepo {
   @override
   Future<Either<Failure, List<BookModel>>> fetchBestSellerBox() async {
     try {
-      var data = await apiService.get(
+      var books = await apiService.get(
         endPoint: 'lists/current/hardcover-fiction.json?',
       );
       List<BookModel> booksListModel = [];
-      for (var book in data['books']) {
+      for (var book in books['results']['books']) {
         BookModel bookModel = BookModel.fromJson(book);
         booksListModel.add(bookModel);
       }
@@ -27,7 +27,6 @@ class HomeRepoImpl implements HomeRepo {
 
   @override
   Future<Either<Failure, List<BookModel>>> fetchFeaturedBox() {
-    // TODO: implement fetchFeaturedBox
     throw UnimplementedError();
   }
 }
