@@ -4,8 +4,8 @@ import 'package:bookly/features/home/data/models/book_model.dart';
 class BooksService {
   final dio = Dio();
 
-  String apiKey = 'Oj6YZC8qSincGvPG5xlcmPM4FMELC4oB';
-  String baseUrl = 'https://api.nytimes.com/svc/books/v3/';
+  final apiKey = 'Oj6YZC8qSincGvPG5xlcmPM4FMELC4oB';
+  final baseUrl = 'https://api.nytimes.com/svc/books/v3/';
 
   Future<List<BookModel>> getBooks() async {
     try {
