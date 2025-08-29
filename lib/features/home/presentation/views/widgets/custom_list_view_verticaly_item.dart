@@ -1,10 +1,7 @@
-import 'package:bookly/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:bookly/core/utils/styles.dart';
 import 'package:bookly/core/utils/app_router.dart';
 import 'package:bookly/features/home/data/models/book_model.dart';
-import 'package:bookly/features/home/presentation/views/widgets/book_rating_widget.dart';
 
 class CustomListViewItemVerticaly extends StatelessWidget {
   const CustomListViewItemVerticaly({super.key, this.bookModel});
@@ -21,37 +18,37 @@ class CustomListViewItemVerticaly extends StatelessWidget {
         height: 160,
         child: Row(
           children: [
-            Image.network(bookModel!.bookImage),
+            // Image.network(bookModel!.thumbnail),
             const SizedBox(width: 30),
             Expanded(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.5,
-                    child: Text(
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                      bookModel!.title,
-                      style: Styles.textStyle20.copyWith(
-                        fontFamily: kPrimaryFont,
-                      ),
-                    ),
-                  ),
-                  Text(
-                    bookModel!.author,
-                    style: Styles.textStyle20.copyWith(
-                      color: Colors.grey.shade500,
-                    ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(bookModel!.price, style: Styles.textStyle20),
-                      BookRating(),
-                    ],
-                  ),
+                  // SizedBox(
+                  //   width: MediaQuery.of(context).size.width * 0.5,
+                  //   child: Text(
+                  //     maxLines: 2,
+                  //     overflow: TextOverflow.ellipsis,
+                  //     bookModel!.title,
+                  //     style: Styles.textStyle20.copyWith(
+                  //       fontFamily: kPrimaryFont,
+                  //     ),
+                  //   ),
+                  // ),
+                  // Text(
+                  //   bookModel!.authors,
+                  //   style: Styles.textStyle20.copyWith(
+                  //     color: Colors.grey.shade500,
+                  //   ),
+                  // ),
+                  // Row(
+                  //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  //   children: [
+                  //     Text(bookModel!.amount, style: Styles.textStyle20),
+                  //     BookRating(),
+                  //   ],
+                  // ),
                 ],
               ),
             ),

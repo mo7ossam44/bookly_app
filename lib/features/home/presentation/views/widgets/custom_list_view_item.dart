@@ -22,10 +22,10 @@ class CustomListViewItem extends StatelessWidget {
               offset: Offset(1, 1),
             ),
           ],
-          image: DecorationImage(
-            fit: BoxFit.cover,
-            image: NetworkImage(bookModel!.bookImage),
-          ),
+          // image: DecorationImage(
+          //   fit: BoxFit.cover,
+          //   image: NetworkImage(),
+          // ),
         ),
       ),
     );
