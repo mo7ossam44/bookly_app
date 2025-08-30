@@ -9,19 +9,20 @@ class HomeRepoImpl implements HomeRepo {
 
   HomeRepoImpl({required this.apiService});
   @override
-  Future<Either<Failure, List<BookModel>>> fetchBestSellerBox() async {
+  Future<Either<Failure, List<BookModel>>> fetchNewestBox() async {
     try {
-      var books = await apiService.get(
-        endPoint: 'volumes?Filtering=free-ebooks&q=intitle:sports&sorting=newest&orderby=relevence',
-      );
+      var data = await apiService.get(
+        endPoint:
+            'volumes?q=intitle:sports&sorting=newest&orderby=relevence',
+      ); 
       List<BookModel> booksListModel = [];
-      for (var book in books['results']['books']) {
+      for (var book in data['items']) {
         BookModel bookModel = BookModel.fromJson(book);
         booksListModel.add(bookModel);
       }
       return right(booksListModel);
     } catch (e) {
-      return left(ServerFaliure());
+      return left(ServerFaliure(e.toString()));
     }
   }
 

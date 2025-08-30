@@ -1,13 +1,10 @@
-
-import 'package:bookly/features/home/data/models/sale_info.dart';
-import 'package:bookly/features/home/data/models/search-info.dart';
-
 import 'access_info.dart';
 import 'package:equatable/equatable.dart';
+import 'package:bookly/features/home/data/models/sale_info.dart';
+import 'package:bookly/features/home/data/models/search-info.dart';
 import 'package:bookly/features/home/data/models/image_links.dart';
 import 'package:bookly/features/home/data/models/reading_modes.dart';
 import 'package:bookly/features/home/data/models/penelization_summary.dart';
-
 
 class BookModel extends Equatable {
   final String? kind;
@@ -31,8 +28,8 @@ class BookModel extends Equatable {
   });
 
   factory BookModel.fromJson(Map<String, dynamic> json) => BookModel(
-        kind: json['kind'] as String?,
         id: json['id'] as String?,
+        kind: json['kind'] as String?,
         etag: json['etag'] as String?,
         selfLink: json['selfLink'] as String?,
         volumeInfo:
@@ -53,7 +50,7 @@ class BookModel extends Equatable {
         'id': id,
         'etag': etag,
         'selfLink': selfLink,
-        'volumeInfo': volumeInfo?.toJson(),
+        'volumeInfo': volumeInfo.toJson(),
         'saleInfo': saleInfo?.toJson(),
         'accessInfo': accessInfo?.toJson(),
         'searchInfo': searchInfo?.toJson(),
@@ -232,3 +229,5 @@ class IndustryIdentifier extends Equatable {
   @override
   List<Object?> get props => [type, identifier];
 }
+
+
