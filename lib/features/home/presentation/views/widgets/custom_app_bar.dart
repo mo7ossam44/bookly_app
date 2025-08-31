@@ -20,7 +20,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
           Image.asset(AssetsData.logo, height: 20),
           IconButton(
             onPressed: () {
-              showSearch(context: context, delegate: CustomSearch());
+              // showSearch(context: context, delegate: CustomSearch());
             },
             icon: Image.asset(
               AssetsData.search,

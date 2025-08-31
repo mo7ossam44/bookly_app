@@ -13,7 +13,7 @@ class SimilarBooksListViewHorizontaly extends StatelessWidget {
         physics: BouncingScrollPhysics(),
         scrollDirection: Axis.horizontal,
         itemCount: 10,
-        itemBuilder: (context, index) => const CustomListViewItem(),
+        itemBuilder: (context, index) {},
       ),
     );
   }

@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:bookly/features/home/data/models/book_model.dart';
-import 'package:bookly/features/home/presentation/manger/get_books_cubit/get_book_cubit.dart';
-import 'package:bookly/features/home/presentation/manger/get_books_cubit/get_book_state.dart';
+import 'package:bookly/features/home/presentation/manger/get_featured_books_cubit/get_featured_books_cubit.dart';
+import 'package:bookly/features/home/presentation/manger/get_featured_books_cubit/get_featured_books_states.dart';
 import 'package:bookly/features/home/presentation/views/widgets/custom_list_view_verticaly_item.dart';
 
 class ListViewBuilder extends StatefulWidget {
@@ -16,30 +15,28 @@ class _ListViewBuilderState extends State<ListViewBuilder> {
   @override
   void initState() {
     super.initState();
-    BlocProvider.of<GetBookCubit>(context).getAllBooksCubit();
+    BlocProvider.of<GetFeaturedBooksCubit>(context).getFeaturedBooksCubit();
   }
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<GetBookCubit, GetBookState>(
+    return BlocBuilder<GetFeaturedBooksCubit, GetFeaturedBooksStates>(
       builder: (context, state) {
-        if (state is GetBookStateLoading) {
+        if (state is FeaturedBookLoading) {
           return Center(child: CircularProgressIndicator(color: Colors.white));
-        } else if (state is GetBookStateSucess) {
-          List<BookModel> booksList =
-              BlocProvider.of<GetBookCubit>(context).booksListCubit ?? [];
+        } else if (state is FeaturedBookLoaded) {
           return Padding(
             padding: EdgeInsetsGeometry.symmetric(horizontal: 20),
             child: ListView.builder(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
-              itemCount: booksList.length,
+              itemCount: state.books.length,
               itemBuilder: (context, index) =>
-                  CustomListViewItemVerticaly(bookModel: booksList[index]),
+                  CustomListViewItemVerticaly(bookModel: state.books[index]),
             ),
           );
-        } else if (state is GetBookStateFaliure) {
-          return Text(state.errMessage);
+        } else if (state is FeaturedBookFaliure) {
+          return Text(state.errMessag);
         } else {
           return Text(
             'No Avalible Books Now , try Later',
