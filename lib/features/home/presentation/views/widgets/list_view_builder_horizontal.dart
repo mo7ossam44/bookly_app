@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:bookly/features/home/data/models/book_model.dart';
 import 'package:bookly/features/home/presentation/views/widgets/custom_list_view_item.dart';
-import 'package:bookly/features/home/presentation/views/widgets/custom_list_view_verticaly_item.dart';
 import 'package:bookly/features/home/presentation/manger/get_newest_books_cubit/get_newest_book_cubit.dart';
 import 'package:bookly/features/home/presentation/manger/get_newest_books_cubit/get_newest_book_state.dart';
 

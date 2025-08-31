@@ -1,5 +1,4 @@
 import 'package:bookly/core/utils/assets.dart';
-import 'package:bookly/features/search/presentation/views/search_view.dart';
 import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatefulWidget {

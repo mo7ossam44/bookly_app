@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:bookly/features/home/presentation/views/widgets/custom_list_view_item.dart';
 
 class SimilarBooksListViewHorizontaly extends StatelessWidget {
   const SimilarBooksListViewHorizontaly({super.key});
@@ -13,7 +12,9 @@ class SimilarBooksListViewHorizontaly extends StatelessWidget {
         physics: BouncingScrollPhysics(),
         scrollDirection: Axis.horizontal,
         itemCount: 10,
-        itemBuilder: (context, index) {},
+        itemBuilder: (context, index) {
+          return Card();
+        },
       ),
     );
   }
