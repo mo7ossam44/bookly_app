@@ -1,4 +1,5 @@
 import 'package:bookly/constants.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:bookly/core/utils/styles.dart';
@@ -7,7 +8,7 @@ import 'package:bookly/features/home/data/models/book_model.dart';
 import 'package:bookly/features/home/presentation/views/widgets/book_rating_widget.dart';
 
 class CustomListViewItemVerticaly extends StatelessWidget {
-  const CustomListViewItemVerticaly({super.key,required this.bookModel});
+  const CustomListViewItemVerticaly({super.key, required this.bookModel});
 
   final BookModel bookModel;
 
@@ -17,11 +18,16 @@ class CustomListViewItemVerticaly extends StatelessWidget {
       onTap: () => GoRouter.of(context).push(AppRouter.kBookView),
       child: Container(
         margin: EdgeInsets.symmetric(vertical: 10),
-        width: MediaQuery.of(context).size.width,
         height: 160,
         child: Row(
           children: [
-            Image.network(bookModel.volumeInfo.imageLinks!.thumbnail),
+            SizedBox(
+              width: 120,
+              child: CachedNetworkImage(
+                fit: BoxFit.fill,
+                imageUrl: bookModel.volumeInfo.imageLinks!.thumbnail,
+              ),
+            ),
             const SizedBox(width: 30),
             Expanded(
               child: Column(
@@ -29,7 +35,6 @@ class CustomListViewItemVerticaly extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.5,
                     child: Text(
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
@@ -48,7 +53,10 @@ class CustomListViewItemVerticaly extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(bookModel.saleInfo!.country!, style: Styles.textStyle20),
+                      Text(
+                        bookModel.saleInfo!.country!,
+                        style: Styles.textStyle20,
+                      ),
                       BookRating(),
                     ],
                   ),

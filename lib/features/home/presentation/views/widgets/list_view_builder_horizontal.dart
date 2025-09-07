@@ -16,7 +16,6 @@ class ListViewBuilderHorizontaly extends StatefulWidget {
 
 class _ListViewBuilderHorizontalyState
     extends State<ListViewBuilderHorizontaly> {
-
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<GetNewestBookCubit, GetNewestBookState>(
@@ -31,8 +30,10 @@ class _ListViewBuilderHorizontalyState
               physics: BouncingScrollPhysics(),
               scrollDirection: Axis.horizontal,
               itemCount: state.books.length,
-              itemBuilder: (context, index) =>
-                  CustomListViewItem(bookModel: state.books[index]),
+              itemBuilder: (context, index) => Padding(
+                padding: const EdgeInsets.only(left: 20),
+                child: CustomListViewItem(bookModel: state.books[index]),
+              ),
             ),
           );
         } else if (state is GetNewestBookStateFaliure) {
