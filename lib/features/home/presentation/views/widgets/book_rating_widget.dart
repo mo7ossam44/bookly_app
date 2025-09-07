@@ -13,11 +13,11 @@ class BookRating extends StatelessWidget {
           padding: const EdgeInsets.only(bottom: 8),
           child: Icon(Icons.star, color: Color(0xffFFDD4F), size: 18),
         ),
-        Text(' 4.8', style: Styles.textStyle20.copyWith(color: Colors.white)),
+        Text(' 0', style: Styles.textStyle20.copyWith(color: Colors.white)),
         Opacity(
           opacity: 0.5,
           child: Text(
-            ' (2390)',
+            ' (0)',
             style: Styles.textStyle20.copyWith(fontWeight: FontWeight.w600),
           ),
         ),

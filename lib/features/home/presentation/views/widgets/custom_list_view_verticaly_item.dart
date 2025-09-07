@@ -53,11 +53,8 @@ class CustomListViewItemVerticaly extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
-                        bookModel.saleInfo!.country!,
-                        style: Styles.textStyle20,
-                      ),
-                      BookRating(),
+                      Text('Free', style: Styles.textStyle20),
+                      BookRating()
                     ],
                   ),
                 ],

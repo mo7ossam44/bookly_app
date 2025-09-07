@@ -16,33 +16,30 @@ class HomeViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
-      physics: BouncingScrollPhysics(),
+      physics: const BouncingScrollPhysics(),
       slivers: [
         SliverToBoxAdapter(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              CustomAppBar(),
-              SliverHight(hight: 20),
+              const CustomAppBar(),
+              const SliverHight(hight: 20),
               BlocProvider(
                 create: (context) =>
                     GetNewestBookCubit(getIt.get<HomeRepoImpl>())
                       ..getNewestBooksCubit(),
-                child: ListViewBuilderHorizontaly(),
+                child: const ListViewBuilderHorizontaly(),
               ),
-              SliverHight(hight: 40),
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 20,
-                  vertical: 10,
-                ),
+              const SliverHight(hight: 40),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                 child: Text('Best Seller', style: Styles.textStyle25),
               ),
               BlocProvider(
                 create: (context) =>
                     GetFeaturedBooksCubit(getIt.get<HomeRepoImpl>())
                       ..getFeaturedBooksCubit(),
-                child: ListViewBuilder(),
+                child: const ListViewBuilder(),
               ),
             ],
           ),
