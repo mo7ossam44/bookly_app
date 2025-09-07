@@ -12,17 +12,20 @@ class CustomListViewItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return AspectRatio(
       aspectRatio: 2.7 / 4,
-      child: CachedNetworkImage(
-        fit: BoxFit.fill,
-        imageUrl: bookModel.volumeInfo.imageLinks!.thumbnail,
-        errorWidget: (context, url, error) => Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(Icons.error_outline, color: Colors.red, size: 70),
-            Text('Fail Loading..'),
-          ],
+      child: ClipRRect(
+        borderRadius: BorderRadiusGeometry.circular(10),
+        child: CachedNetworkImage(
+          fit: BoxFit.fill,
+          imageUrl: bookModel.volumeInfo.imageLinks!.thumbnail,
+          errorWidget: (context, url, error) => Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(Icons.error_outline, color: Colors.red, size: 70),
+              Text('Fail Loading..'),
+            ],
+          ),
+          placeholder: (context, url) => CustomLoadingIndicator(),
         ),
-        placeholder: (context, url) => CustomLoadingIndicator(),
       ),
     );
   }

@@ -21,11 +21,14 @@ class CustomListViewItemVerticaly extends StatelessWidget {
         height: 160,
         child: Row(
           children: [
-            SizedBox(
-              width: 120,
-              child: CachedNetworkImage(
-                fit: BoxFit.fill,
-                imageUrl: bookModel.volumeInfo.imageLinks!.thumbnail,
+            ClipRRect(
+              borderRadius: BorderRadiusGeometry.circular(10),
+              child: SizedBox(
+                width: 120,
+                child: CachedNetworkImage(
+                  fit: BoxFit.fill,
+                  imageUrl: bookModel.volumeInfo.imageLinks!.thumbnail,
+                ),
               ),
             ),
             const SizedBox(width: 30),
@@ -54,7 +57,7 @@ class CustomListViewItemVerticaly extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text('Free', style: Styles.textStyle20),
-                      BookRating()
+                      BookRating(),
                     ],
                   ),
                 ],

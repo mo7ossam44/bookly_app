@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:bookly/features/home/presentation/views/widgets/custom_list_view_item.dart';
 import 'package:bookly/features/home/presentation/manger/get_newest_books_cubit/get_newest_book_cubit.dart';
 import 'package:bookly/features/home/presentation/manger/get_newest_books_cubit/get_newest_book_state.dart';
+import 'package:shimmer/shimmer.dart';
 
 class ListViewBuilderHorizontaly extends StatefulWidget {
   const ListViewBuilderHorizontaly({super.key});
@@ -20,10 +21,10 @@ class _ListViewBuilderHorizontalyState
   Widget build(BuildContext context) {
     return BlocBuilder<GetNewestBookCubit, GetNewestBookState>(
       builder: (context, state) {
+        var height = MediaQuery.of(context).size.height;
         if (state is GetNewestBookStateLoading) {
           return CustomLoadingIndicator();
         } else if (state is GetNewestBookStateLoaded) {
-          var height = MediaQuery.of(context).size.height;
           return SizedBox(
             height: height * 0.3,
             child: ListView.builder(
