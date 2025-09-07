@@ -1,3 +1,5 @@
+import 'package:bookly/core/utils/widgets/custom_error_widget.dart';
+import 'package:bookly/core/utils/widgets/custom_loading_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:bookly/features/home/presentation/views/widgets/custom_list_view_item.dart';
@@ -14,18 +16,18 @@ class ListViewBuilderHorizontaly extends StatefulWidget {
 
 class _ListViewBuilderHorizontalyState
     extends State<ListViewBuilderHorizontaly> {
-  @override
-  void initState() {
-    super.initState();
-    BlocProvider.of<GetNewestBookCubit>(context).getNewestBooksCubit();
-  }
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   BlocProvider.of<GetNewestBookCubit>(context).getNewestBooksCubit();
+  // }
 
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<GetNewestBookCubit, GetNewestBookState>(
       builder: (context, state) {
         if (state is GetNewestBookStateLoading) {
-          return Center(child: CircularProgressIndicator(color: Colors.white));
+          return CustomLoadingIndicator();
         } else if (state is GetNewestBookStateLoaded) {
           var height = MediaQuery.of(context).size.height;
           return SizedBox(
@@ -39,12 +41,9 @@ class _ListViewBuilderHorizontalyState
             ),
           );
         } else if (state is GetNewestBookStateFaliure) {
-          return Text(state.errMessage);
+          return CustomErrorWidget(errMessage: state.errMessage);
         } else {
-          return Text(
-            'No Avalible Books Now , try Later',
-            style: TextStyle(color: Colors.white),
-          );
+          return CustomLoadingIndicator();
         }
       },
     );

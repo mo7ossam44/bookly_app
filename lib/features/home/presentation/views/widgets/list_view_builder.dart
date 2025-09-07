@@ -12,11 +12,11 @@ class ListViewBuilder extends StatefulWidget {
 }
 
 class _ListViewBuilderState extends State<ListViewBuilder> {
-  @override
-  void initState() {
-    super.initState();
-    BlocProvider.of<GetFeaturedBooksCubit>(context).getFeaturedBooksCubit();
-  }
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   BlocProvider.of<GetFeaturedBooksCubit>(context).getFeaturedBooksCubit();
+  // }
 
   @override
   Widget build(BuildContext context) {

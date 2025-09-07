@@ -1,10 +1,9 @@
-import 'package:bookly/core/utils/service_locator.dart';
-import 'package:bookly/features/home/data/repos/home_repo_impl.dart';
 import 'package:flutter/material.dart';
 import 'package:bookly/core/utils/styles.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:bookly/core/api/api_service.dart';
+import 'package:bookly/core/utils/service_locator.dart';
 import 'package:bookly/core/utils/widgets/sliver_hight.dart';
+import 'package:bookly/features/home/data/repos/home_repo_impl.dart';
 import 'package:bookly/features/home/presentation/views/widgets/custom_app_bar.dart';
 import 'package:bookly/features/home/presentation/views/widgets/list_view_builder.dart';
 import 'package:bookly/features/home/presentation/views/widgets/list_view_builder_horizontal.dart';
@@ -27,7 +26,8 @@ class HomeViewBody extends StatelessWidget {
               SliverHight(hight: 20),
               BlocProvider(
                 create: (context) =>
-                    GetNewestBookCubit(getIt.get<HomeRepoImpl>()),
+                    GetNewestBookCubit(getIt.get<HomeRepoImpl>())
+                      ..getNewestBooksCubit(),
                 child: ListViewBuilderHorizontaly(),
               ),
               SliverHight(hight: 40),
@@ -40,7 +40,8 @@ class HomeViewBody extends StatelessWidget {
               ),
               BlocProvider(
                 create: (context) =>
-                    GetFeaturedBooksCubit(getIt.get<HomeRepoImpl>()),
+                    GetFeaturedBooksCubit(getIt.get<HomeRepoImpl>())
+                      ..getFeaturedBooksCubit(),
                 child: ListViewBuilder(),
               ),
             ],
