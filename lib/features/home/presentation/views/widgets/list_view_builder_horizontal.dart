@@ -16,11 +16,6 @@ class ListViewBuilderHorizontaly extends StatefulWidget {
 
 class _ListViewBuilderHorizontalyState
     extends State<ListViewBuilderHorizontaly> {
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   BlocProvider.of<GetNewestBookCubit>(context).getNewestBooksCubit();
-  // }
 
   @override
   Widget build(BuildContext context) {

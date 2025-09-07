@@ -13,7 +13,6 @@ class CustomListViewItem extends StatelessWidget {
       child: Container(
         margin: EdgeInsets.only(right: 15),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(30),
           image: DecorationImage(
             fit: BoxFit.cover,
             image: NetworkImage(bookModel.volumeInfo.imageLinks!.thumbnail),
